@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "img": "1.jpg",
+      "pname": "car",
+      "price": 60,
+      "quantity": 20
+    },
+    {
+      "id": 2,
+      "img": "2.jpg",
+      "pname": "camera",
+      "price": 70,
+      "quantity": 0
+    },
+    {
+      "id": 3,
+      "img": "3.jpg",
+      "pname": "laptop",
+      "price": 80,
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "img": "4.jpg",
+      "pname": "mobile",
+      "price": 90,
+      "quantity": 10
+    }
+  ]
+}
