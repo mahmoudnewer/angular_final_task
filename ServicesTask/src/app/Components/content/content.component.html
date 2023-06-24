@@ -1,0 +1,37 @@
+<div class="container text-center mb-5 mt-4">
+
+    <div class="card border-0 ">
+        <img src="assets/imgs/{{myImg}}" class="card-img-top " alt="..." style="height: 350px;">
+        <div class="card-body text-center my-2">
+          <a href="#" class="btn btn-primary" (click)="show()">Next</a>
+        </div>
+      </div>
+
+
+    <h1 class="my-4">My Products</h1>
+
+    <div class="row">
+        <div class="col-md-3" *ngFor="let item of products ; let i = index ">
+            <div class="card">
+                <img src="{{item.img}}" class="card-img-top" style="height: 300px;" alt="...">
+                <div class="card-body" style="height: 200px;">
+                    <div style="height: 100px">
+                        <p class="card-title">Product Name : {{item.Name}} </p>
+                        <p class="card-title">Product Price : {{item.Price}} </p>
+                        <p class="card-title">Product Quantity : {{ item.Quantity == 0 ? "No products avaliable"
+                            : item.Quantity==1 ? "Only one product available"
+                            : item.Quantity }}</p>
+                    </div>
+                    <a href="#" class="btn btn-primary mt-4" [ngStyle]="
+                {
+                    'background-color' : item.Quantity == 0 ? 'red' : item.Quantity == 1 ? 'yellow' : 'green',
+                }">
+                        {{ item.Quantity == 0 ? 'Sold Out' : 'Buy Now' }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

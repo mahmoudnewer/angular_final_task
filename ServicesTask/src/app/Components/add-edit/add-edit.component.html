@@ -1,0 +1,40 @@
+<div class="container">
+  <form [formGroup]="productsForm" (submit)="Submit($event)">
+
+    <div class="mb-3">
+      <label for="pname" class="form-label">Product Name</label>
+      <input formControlName="pname" type="text" class="form-control" id="pname" aria-describedby="emailHelp">
+      <ng-container *ngIf="getProductName.touched">
+        <div id="pname" class="text-danger" *ngIf="getProductName.hasError('required')"> Please Enter Product Name</div>
+        <div id="pname" class="text-danger" *ngIf="getProductName.hasError('minlength')"> Product Name must be 3 chars
+          at least</div>
+      </ng-container>
+    </div>
+
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input formControlName="price" type="number" class="form-control" id="price">
+      <ng-container *ngIf="getProductPrice.touched">
+        <span id="price" class="text-danger" *ngIf="getProductPrice.hasError('required')"> Please Enter Product
+          Price</span>
+        <span id="price" class="text-danger" *ngIf="getProductPrice.hasError('min')"> Product price must be 50$ or more
+        </span>
+      </ng-container>
+    </div>
+
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input formControlName="quantity" type="number" class="form-control" id="quantity">
+      <ng-container *ngIf="getProductQuantity.touched">
+        <span id="quantity" class="text-danger" *ngIf="getProductQuantity.hasError('required')"> Please Enter Product
+          Quantity</span>
+        <span id="quantity" class="text-danger" *ngIf="getProductQuantity.hasError('max')"> Max product quantity is 30
+        </span>
+      </ng-container>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary"> {{productId == 0 ? "Add Product" : "Save Changes"}} </button>
+  </form>
+</div>

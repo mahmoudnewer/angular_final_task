@@ -1,0 +1,27 @@
+<div class="container text-center mb-5">
+    <h1 class="my-4">My Products</h1>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-3">
+            <div class="card">
+                <img [src]="'assets/imgs/'+product.img" class="card-img-top" style="height: 300px;" alt="...">
+                <div class="card-body" style="height: 200px;">
+                    <div style="height: 100px">
+                        <p class="card-title">Product Name : {{product.pname}} </p>
+                        <p class="card-title">Product Price : {{product.price}} </p>
+                        <p class="card-title">Product Quantity : {{ product.quantity == 0 ? "No products avaliable"
+                            : product.quantity==1 ? "Only one product available"
+                            : product.quantity }}</p>
+                    </div>
+                    <a href="#" class="btn btn-primary mt-4" [ngStyle]="
+                {
+                    'background-color' : product.quantity == 0 ? 'red' : product.quantity == 1 ? 'yellow' : 'green',
+                }">
+                        {{ product.quantity == 0 ? 'Sold Out' : 'Buy Now' }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
